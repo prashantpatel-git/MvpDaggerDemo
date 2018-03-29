@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/login_background</item>
+        <item name="android:fontFamily">@font/cabin_regular</item>
+
+        <item name="android:windowContentTransitions">true</item>
+
+    </style>
+
+    <style name="AppThemeTransparentBg" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+</resources>

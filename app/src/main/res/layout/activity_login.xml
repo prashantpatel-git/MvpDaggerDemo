@@ -1,0 +1,14 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            android:id="@+id/login_main_layout"
+            layout="@layout/login_main_layout" />
+
+        <include layout="@layout/login_bottom_sheet" />
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

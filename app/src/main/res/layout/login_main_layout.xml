@@ -1,0 +1,152 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="loginView"
+            type="com.prashant.mvpdaggerdemo.login.LoginContract.LoginView" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_container_layout"
+        style="@style/AppThemeTransparentBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="false">
+
+        <EditText
+            android:id="@+id/login_email_et"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/edittext_bg"
+            android:gravity="center"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@id/login_password_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_label_tv" />
+
+
+        <EditText
+            android:id="@+id/login_password_et"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edittext_bg"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/login_btn_login_iv"
+            app:layout_constraintEnd_toEndOf="@+id/login_email_et"
+            app:layout_constraintStart_toStartOf="@+id/login_email_et"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_et"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <LinearLayout
+            android:id="@+id/login_btn_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password_et">
+
+            <FrameLayout
+                android:id="@+id/login_btn_container_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_bg"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:onClick="@{()->loginView.onLoginBtnClick()}"
+                android:orientation="vertical">
+
+                <!--<Button
+                    android:id="@+id/login_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->loginView.onLoginBtnClick()}"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />-->
+
+                <ProgressBar
+                    android:id="@+id/login_progress_bar"
+                    android:layout_width="@dimen/btn_height"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:progressTint="@color/colorWhite"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/login_status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:inputType="textPersonName"
+                    android:text="Log In"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorWhite" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <ImageView
+
+            android:id="@+id/login_btn_login_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_bg"
+            android:elevation="7dp"
+            android:inputType="textPersonName"
+            android:onClick="@{()->loginView.onLoginBtnClick()}"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:text=""
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password_et" />
+
+        <TextView
+            android:id="@+id/login_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="Log In"
+            android:textColor="@color/colorWhite"
+            android:textSize="40sp"
+            android:transitionName="login"
+            app:layout_constraintBottom_toTopOf="@+id/login_email_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
+
